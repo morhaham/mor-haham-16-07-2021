@@ -22,10 +22,8 @@ export const store = configureStore({
 });
 
 store.subscribe(() => {
-  localStorage.setItem(
-    'favoriteCities',
-    JSON.stringify(store.getState().weather.favoriteCities)
-  );
+  const { favoriteCities } = store.getState().weather;
+  localStorage.setItem('favoriteCities', JSON.stringify(favoriteCities));
 });
 
 setupListeners(store.dispatch);

@@ -11,6 +11,7 @@ const getFavoriteCitiesFromLocalStorage = () => {
   try {
     const persistedState = localStorage.getItem('favoriteCities');
     if (persistedState) return JSON.parse(persistedState);
+    return null;
   } catch (e) {
     console.log(e);
   }
@@ -18,6 +19,7 @@ const getFavoriteCitiesFromLocalStorage = () => {
 
 const favoriteCities = getFavoriteCitiesFromLocalStorage();
 if (favoriteCities) {
+  console.log(favoriteCities);
   store.dispatch(hydrateFavoriteCities(favoriteCities));
 }
 

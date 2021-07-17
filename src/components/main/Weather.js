@@ -46,7 +46,7 @@ const Weather = () => {
         dispatch(setCurrentCity(defaultCity));
       }
     );
-  }, [dispatch]);
+  }, []);
 
   // set the current location
   useEffect(() => {
@@ -62,7 +62,8 @@ const Weather = () => {
   }, [location]);
 
   const toggleFavorite = () => {
-    if (currentCity?.isFavorite) {
+    if (!currentCity) return;
+    if (currentCity.isFavorite) {
       dispatch(removeFavoriteCity(currentCity));
     } else {
       dispatch(addFavoriteCity(currentCity));
@@ -72,7 +73,9 @@ const Weather = () => {
   if (isLoading) return <Spinner />;
   if (!currentCity)
     return (
-      <Heading color='herolo.500'>Sorry, nothing to show right now :(</Heading>
+      <Heading fontSize='md' color='herolo.500'>
+        Sorry, nothing to show right now :(
+      </Heading>
     );
   return (
     <Stack
