@@ -5,7 +5,7 @@ const apiKey = process.env.REACT_APP_WHEATHER_APIKEY;
 export const conditionsApi = createApi({
   reducerPath: 'conditionsApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://dataservice.accuweather.com/currentconditions/v1',
+    baseUrl: 'https://dataservice.accuweather.com/currentconditions/v1',
   }),
   endpoints: (builder) => ({
     getConditionsByCityKey: builder.query({

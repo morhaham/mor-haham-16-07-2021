@@ -5,7 +5,7 @@ const apiKey = process.env.REACT_APP_WHEATHER_APIKEY;
 export const citiesApi = createApi({
   reducerPath: 'citiesApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'http://dataservice.accuweather.com/locations/v1/cities',
+    baseUrl: 'https://dataservice.accuweather.com/locations/v1/cities',
   }),
   endpoints: (builder) => ({
     getCityByName: builder.query({
