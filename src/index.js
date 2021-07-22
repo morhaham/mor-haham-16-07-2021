@@ -19,7 +19,6 @@ const getFavoriteCitiesFromLocalStorage = () => {
 
 const favoriteCities = getFavoriteCitiesFromLocalStorage();
 if (favoriteCities) {
-  console.log(favoriteCities);
   store.dispatch(hydrateFavoriteCities(favoriteCities));
 }
 

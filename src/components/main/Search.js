@@ -21,7 +21,12 @@ const Search = () => {
 
   const handleSelect = (value, item) => {
     setSearch(value);
-    dispatch(setCurrentCity(item));
+    dispatch(
+      setCurrentCity({
+        cityKey: item.Key,
+        cityName: item.LocalizedName,
+      })
+    );
   };
 
   return (
